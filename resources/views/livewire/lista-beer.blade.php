@@ -8,16 +8,17 @@
         <button wire:click="update">Atualizar</button>
     @endif
 
-<p><button wire:click="resetList">Apagar Lista</button></p>
+    <button wire:click="resetList">Apagar Lista</button>
 
-
-    <ul>
-        @foreach ($list as $key => $nome)
-            <li>
-                <span>{{ $nome }} - </span>
-                <button wire:click="edit({{ $key }})">Editar</button>
-                <button wire:click="delete({{ $key }})">X</button>
-            </li>
-        @endforeach
-    </ul>
+    <p>
+        <ul>
+            @foreach ($list as $key => $nome)
+                <li>
+                    <span>{{ $nome }} - </span>
+                    <button wire:click="edit({{ $key }})">Editar</button>
+                    <button wire:click="delete({{ $key }})">X</button>
+                </li>
+            @endforeach
+        </ul>
+    </p>
 </div>

@@ -9,6 +9,9 @@ Por gentileza, execute os passos abaixo para rodar essa aplicação:
 - [Acesse o diretorio "example-app" e instale o Livewire ==> composer require livewire/livewire](https://laravel-livewire.com/docs/2.x/quickstart).
 - [Instale o Turbolinks ==> npm install --save turbolinks](https://github.com/turbolinks/turbolinks).
 - [Execute os comandos ==> npm install && npm run dev](https://docs.npmjs.com/getting-started).
+- [Em caso de "cURL error" ==> Tente essa solução](https://www.rafaelwendel.com/2020/05/php-como-resolver-o-erro-curl-error-60/).
+- [Instalar pacote pt-BR ==> composer require lucascudo/laravel-pt-br-localization --dev](https://github.com/lucascudo/laravel-pt-BR-localization).
+- [Publicar pacote pt-BR ==> php artisan vendor:publish --tag=laravel-pt-br-localization](https://github.com/lucascudo/laravel-pt-BR-localization).
 
 ## License
 
