@@ -5,18 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <!--link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"-->
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/custon.css') }}" />
     @livewireStyles
 </head>
 <body>
-    <a href="/">Home</a>
-    <a href="/todo">Todo</a>
-    {{ $slot }}
+  <div class="container mt-3">
+    <div class="mb-3">
+      <a href="/" class="btn btn-outline-secondary btn-sm">Home</a>
+      <a href="/todo" class="btn btn-outline-secondary btn-sm">Todo</a>
+      <a href="/form" class="btn btn-outline-secondary btn-sm">Form</a>
+    </div>
 
-    @livewireScripts
-    <script src="{{ asset('js/app.js') }}"></script>
-    <!--script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></!--script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script-- src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script-->
+    {{ $slot }}
+  </div>
+
+  <script src="{{ asset('js/app.js') }}"></script>
+  @livewireScripts
 </body>
 </html>

@@ -19,3 +19,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', \App\Http\Livewire\Home::class);
 Route::get('/todo', \App\Http\Livewire\ListaBeer::class);
+Route::get('/form', \App\Http\Livewire\ContactForm::class);

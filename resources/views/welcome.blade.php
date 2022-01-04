@@ -8,7 +8,8 @@
     @livewireStyles
 </head>
 <body>
-
+    <livewire:lista-beer></livewire:lista-beer>
+    <script src="/js/app.js"></script>
     @livewireScripts
     <script src="https://cdn.jsdelivr.net/gh/livewire/turbolinks@v0.1.x/dist/livewire-turbolinks.js"
         data-turbolinks-eval="false"></script>

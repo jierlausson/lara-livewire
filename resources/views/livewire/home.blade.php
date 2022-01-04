@@ -22,7 +22,7 @@
           </div>
         </div>
         @if ($errors->has('username'))
-          <span>{{ $errors->first('username') }}</span>
+          <span class="error">{{ $errors->first('username') }}</span>
           {{ $profile = '' }}{{ $not = '' }}
         @endif
         @if ( $profile)
