@@ -9,6 +9,7 @@ class Home extends Component
 {
   public $username;
   public $profile;
+  public $not;
 
   public function render()
   {
@@ -17,11 +18,21 @@ class Home extends Component
 
   public function getDataGithub()
   {
+    $this->validate([
+      "username" => 'required|min:3'
+    ]);
     if ($this->username != '') {
       $response = Http::get('https://api.github.com/users/' . $this->username);
-      $this->profile = $response->json();
+      if ($response->json(['name'])) {
+        $this->profile = $response->json();
+        $this->not = null;
+      } else if ($response->json(['message']) == 'Not Found') {
+        $this->profile = null;
+        $this->not = 'Usuário não encontrado!';
+      }
     } else {
       $this->profile = null;
+      $this->not = null;
     }
   }
 }
