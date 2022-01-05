@@ -3,41 +3,43 @@
     <div class="row d-flex justfy-content-center">
       <div class="col-md-7">
         <div class="form-bg">
-          <form class="form">
+          <form wire:submit.prevent="submitForm" class="form">
             <div class="form-group">
               <label class="sr-only">Name</label>
-              <input
+              <input wire:model='name'
                 type="text"
                 name="name"
                 class="form-control"
                 placeholder="Seu nome">
-              <!-- vadation-->
+              @error('name')<span class="error">{{ $message }}</span> @enderror>
             </div>
             <div class="form-group">
               <label class="sr-only">Email</label>
-              <input
+              <input wire:model='email'
                 type="email"
                 name="email"
                 class="form-control"
                 placeholder="Email">
-              <!--validation-->
+              @error('email')<span class="error">{{ $message }}</span> @enderror>
             </div>
             <div class="form-group">
               <label class="sr-only">Mensagem</label>
-              <textarea
+              <textarea wire:model='message'
                 name="message"
                 class="form-control"
                 rows="7"
                 placeholder="Escreva a mensagem">
               </textarea>
             </div>
-            <!--validation-->
+            @error('message')<span class="error">{{ $message }}</span> @enderror>
             <button
-
+              wire:loading.attr="disabled"
+              wire:target="submitForm"
               type="submit"
               class="btn text-center btn-blue">
               <span
-
+                wire:loading
+                wire:target="submitForm"
                 class="spinner-border spinner-border-sm"
                 role="status"
                 aria-hidden="true"
@@ -46,19 +48,19 @@
               Enviar mensagem
             </button>
 
-            <!-- IF -->
+            @if ($successMessage)
             <div class="alert alert-success alert-dismissible" role="alert">
               <button
-
+                wire:click="$set('successMessage', null)"
                 type="button"
                 class="close"
                 data-dismiss="alert"
                 aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
-              <strong>Legal!</strong> <!-- Custon Message -->
+              <strong>Legal!</strong> {{ $successMessage }}
             </div>
-            <!-- ENDIF -->
+            @endif
           </form>
         </div>
       </div>

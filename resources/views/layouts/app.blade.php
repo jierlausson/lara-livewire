@@ -5,17 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}" />
-    <link rel="stylesheet" href="{{ asset('css/custon.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/custon.css') }}">
     @livewireStyles
 </head>
 <body>
   <div class="container mt-3">
-    <div class="mb-3">
-      <a href="/" class="btn btn-outline-secondary btn-sm">Home</a>
-      <a href="/todo" class="btn btn-outline-secondary btn-sm">Todo</a>
-      <a href="/form" class="btn btn-outline-secondary btn-sm">Form</a>
-    </div>
+    <ul class="nav nav-tabs mb-3">
+      <li class="nav-item">
+        <a class="nav-link {{ Route::current()->getName() === 'home.index' ? 'active' : '' }}" href="/">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link {{ Route::current()->getName() === 'todo.index' ? 'active' : '' }}" href="/todo">Todo</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link {{ Route::current()->getName() === 'form.index' ? 'active' : '' }}" href="/form">Form</a>
+      </li>
+    </ul>
 
     {{ $slot }}
   </div>

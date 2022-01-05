@@ -17,6 +17,6 @@ use Illuminate\Support\Facades\Route;
     return view('welcome');
 }); */
 
-Route::get('/', \App\Http\Livewire\Home::class);
-Route::get('/todo', \App\Http\Livewire\ListaBeer::class);
-Route::get('/form', \App\Http\Livewire\ContactForm::class);
+Route::get('/', \App\Http\Livewire\Home::class)->name('home.index');
+Route::get('/todo', \App\Http\Livewire\ListaBeer::class)->name('todo.index');
+Route::get('/form', \App\Http\Livewire\ContactForm::class)->name('form.index');
