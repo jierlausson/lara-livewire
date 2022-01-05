@@ -35,7 +35,7 @@
             <button
 
               type="submit"
-              class="btn btn-primary text-center">
+              class="btn text-center btn-blue">
               <span
 
                 class="spinner-border spinner-border-sm"
